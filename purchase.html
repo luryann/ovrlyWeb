@@ -1,152 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ovrly – Purchase</title>
+    <title>Get ovrly Pro - AI Study Assistant for Students | Lifetime Access $49.99</title>
+    <meta name="description" content="Unlock ovrly Pro for lifetime access. AI-powered screen analysis tool perfect for students. Support for GPT-4, Claude, and Gemini. One-time purchase, no subscriptions.">
+    <meta name="keywords" content="ovrly pro, AI study tool, student software, GPT-4, Claude, Gemini, macOS app, screen analysis, lifetime license">
+    <meta name="author" content="ovrly">
+    <meta property="og:title" content="Get ovrly Pro - AI Study Assistant for Students">
+    <meta property="og:description" content="Unlock lifetime access to ovrly Pro. AI-powered screen analysis perfect for students studying code, research, and coursework.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ovrly.app/purchase.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Get ovrly Pro - AI Study Assistant">
+    <meta name="twitter:description" content="Lifetime access to AI-powered screen analysis for students. One-time purchase, no subscriptions.">
+    <link rel="canonical" href="https://ovrly.app/purchase.html">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
-            line-height: 1.6;
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; 
+            background-color: #f9f9f9; 
+            color: #222; 
+            line-height: 1.6; 
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            width: 100%;
+        
+        a { 
+            text-decoration: none; 
+            color: inherit; 
         }
-        header {
-            padding: 30px 0;
-            position: relative;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.1);
+        
+        header { 
+            background-color: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee; 
+            padding: 1rem 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
         }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        
+        nav.container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 2rem; 
         }
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: #2c3e50;
+        
+        .logo { 
+            font-size: 1.8rem; 
+            font-weight: bold; 
+            color: #007aff; 
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
+        
+        .nav-links { 
+            list-style: none; 
+            display: flex; 
+            gap: 2rem; 
         }
-        .nav-links a {
-            color: #7f8c8d;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        
+        .nav-links li a { 
+            padding: 0.5rem 1rem; 
+            color: #555; 
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
-        .nav-links a:hover {
-            color: #2c3e50;
+        
+        .nav-links li a:hover {
+            background-color: #f0f0f0;
+            color: #007aff;
         }
+        
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            font-size: 24px;
-            color: #2c3e50;
+            font-size: 1.5rem;
             cursor: pointer;
         }
-        .purchase-container {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            margin: 60px auto;
-        }
-        .purchase-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-        .purchase-description {
-            font-size: 1.1rem;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-        }
-        .btn-pay {
-            background: #2c3e50;
+        
+        .purchase-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 15px 30px;
-            font-size: 16px;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .purchase-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            position: relative;
+            z-index: 1;
+        }
+        
+        .purchase-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .purchase-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .purchase-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .purchase-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+        
+        .main-content {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .purchase-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .price-section {
+            margin-bottom: 2rem;
+        }
+        
+        .price-tag {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-subtitle {
+            color: #27ae60;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .value-proposition {
+            background: linear-gradient(135deg, #f8f9ff, #e6f3ff);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #007aff;
+        }
+        
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .features-list li::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .btn-pay {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1.25rem 3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             border: none;
-            border-radius: 10px;
+            border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            max-width: 300px;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
         }
+        
         .btn-pay:hover {
-            background: #34495e;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
         }
-        .price-tag {
+        
+        .guarantee {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .comparison-section {
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .comparison-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .comparison-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .card-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .free-price {
             color: #27ae60;
-            font-weight: 700;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
         }
+        
+        .pro-price {
+            color: #e74c3c;
+        }
+        
+        .card-features {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+        
+        .card-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .card-features li.included::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .card-features li.not-included::before {
+            content: "✗";
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .pro-card {
+            border: 3px solid #007aff;
+            position: relative;
+            transform: scale(1.05);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .testimonials {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        .testimonials-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 16px;
+            border-left: 4px solid #007aff;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        footer { 
+            background-color: #2c3e50; 
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
         @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
+            .nav-links { 
+                display: none; 
             }
-            .purchase-container {
-                margin: 30px auto;
-                padding: 30px 20px;
-            }
-            .purchase-title {
-                font-size: 1.8rem;
-            }
-            .purchase-description {
-                font-size: 1rem;
-            }
-            .btn-pay {
-                padding: 12px 20px;
-                font-size: 14px;
-            }
-            .nav-links {
-                display: none;
-            }
+            
             .mobile-menu-btn {
                 display: block;
             }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 20px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                flex-direction: column;
-                gap: 15px;
+            
+            .purchase-title {
+                font-size: 2.5rem;
             }
-            .nav-links.active {
-                display: flex;
+            
+            .purchase-hero {
+                padding: 3rem 1rem;
+            }
+            
+            .main-content {
+                padding: 3rem 1rem;
+            }
+            
+            .comparison-section {
+                padding: 3rem 1rem;
+            }
+            
+            .testimonials {
+                padding: 3rem 1rem;
+            }
+            
+            .cta-section {
+                padding: 3rem 1rem;
+            }
+            
+            .purchase-card {
+                padding: 2rem;
+            }
+            
+            .pro-card {
+                transform: none;
+            }
+            
+            nav.container {
+                padding: 0 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .purchase-title {
+                font-size: 2rem;
+            }
+            
+            .comparison-title {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .price-tag {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -155,7 +482,7 @@
     <header>
         <nav class="container">
             <div class="logo">ovrly</div>
-            <button class="mobile-menu-btn">☰</button>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#features">Features</a></li>
@@ -163,27 +490,177 @@
             </ul>
         </nav>
     </header>
-    <div class="purchase-container">
-        <div class="purchase-title">Unlock ovrly</div>
-        <div class="purchase-description">
-            One-time purchase for lifetime access.<br>
-            The fastest way to query OpenAI, Claude, and Gemini—instantly.<br>
-            Built for macOS 14+ with privacy-first design.
+
+    <main>
+        <section class="purchase-hero">
+            <div class="container">
+                <div class="purchase-content">
+                    <div class="purchase-badge">
+                        🎓 Perfect for Students
+                    </div>
+                    <h1 class="purchase-title">
+                        Unlock Your Study<br>
+                        Potential with ovrly Pro
+                    </h1>
+                    <p class="purchase-subtitle">
+                        Get lifetime access to the most powerful AI study assistant for Mac. 
+                        Transform how you learn with instant screen analysis and AI insights.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <div class="purchase-card">
+                    <div class="price-section">
+                        <div class="price-tag">$49.99</div>
+                        <div class="price-subtitle">One-time purchase • Lifetime access</div>
+                    </div>
+                    
+                    <div class="value-proposition">
+                        <h3 class="value-title">Why Students Choose ovrly Pro</h3>
+                        <ul class="features-list">
+                            <li>Analyze any code, research paper, or diagram instantly</li>
+                            <li>Access to GPT-4, Claude 3.5, and Gemini 2.0 simultaneously</li>
+                            <li>Perfect for CS, Engineering, and STEM coursework</li>
+                            <li>Save hours on debugging and research</li>
+                            <li>Privacy-first design - your data stays on your device</li>
+                            <li>Built specifically for macOS with native performance</li>
+                            <li>No monthly subscriptions or hidden fees</li>
+                            <li>Free updates for life</li>
+                        </ul>
+                    </div>
+                    
+                    <form action="pay-sub/create-checkout-session.html" method="POST">
+                        <button type="submit" class="btn-pay">
+                            Get ovrly Pro - Lifetime Access
+                        </button>
+                    </form>
+                    
+                    <div class="guarantee">
+                        <strong>🛡️ 30-Day Money-Back Guarantee</strong><br>
+                        Not satisfied? Get a full refund within 30 days, no questions asked.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison-section">
+            <div class="container">
+                <h2 class="comparison-title">Free vs Pro</h2>
+                <p class="comparison-subtitle">
+                    See what you get with ovrly Pro compared to the free version
+                </p>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3 class="card-title">ovrly Free</h3>
+                        <div class="card-price free-price">$0</div>
+                        <ul class="card-features">
+                            <li class="included">Basic screen analysis</li>
+                            <li class="included">Single AI model access</li>
+                            <li class="included">Limited daily queries</li>
+                            <li class="not-included">Premium AI models</li>
+                            <li class="not-included">Unlimited usage</li>
+                            <li class="not-included">Advanced features</li>
+                            <li class="not-included">Priority support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card pro-card">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3 class="card-title">ovrly Pro</h3>
+                        <div class="card-price pro-price">$49.99</div>
+                        <ul class="card-features">
+                            <li class="included">Advanced screen analysis</li>
+                            <li class="included">GPT-4, Claude 3.5, Gemini 2.0</li>
+                            <li class="included">Unlimited daily queries</li>
+                            <li class="included">Compare AI responses</li>
+                            <li class="included">Faster processing</li>
+                            <li class="included">Code explanation & debugging</li>
+                            <li class="included">Priority email support</li>
+                            <li class="included">Lifetime updates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="testimonials-title">What Students Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p class="testimonial-text">
+                            "ovrly Pro has completely changed how I approach coding assignments. 
+                            Instead of spending hours stuck on bugs, I get instant explanations 
+                            and can focus on learning the concepts."
+                        </p>
+                        <div class="testimonial-author">- Sarah M., CS Student</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">
+                            "As a PhD student, I analyze tons of research papers. ovrly Pro helps 
+                            me quickly understand complex diagrams and extract key insights. 
+                            It's like having a research assistant built into my Mac."
+                        </p>
+                        <div class="testimonial-author">- David L., PhD Candidate</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">
+                            "The best $50 I've spent on software. Being able to get help with 
+                            math equations and physics problems just by taking a screenshot 
+                            has saved me countless study hours."
+                        </p>
+                        <div class="testimonial-author">- Maria R., Engineering Student</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Ready to Study Smarter?</h2>
+                <p class="cta-subtitle">
+                    Join thousands of students who've transformed their learning with ovrly Pro. 
+                    One purchase, lifetime of smarter studying.
+                </p>
+                <a href="#" class="btn-pay" onclick="document.querySelector('form').submit(); return false;">
+                    Get ovrly Pro Now - $49.99
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 ovrly. Made for students, by students. Secure payment powered by Stripe.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7;">
+                Requires macOS 14+ • OpenAI, Anthropic, or Google API key required for AI features
+            </p>
         </div>
-        <div class="price-tag">$49.99 USD</div>
-        <form action="pay-sub/create-checkout-session.html" method="POST">
-            <button type="submit" class="btn-pay">Proceed to Payment</button>
-        </form>
-    </div>
+    </footer>
+
     <script>
+        // Add mobile menu functionality
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+
+        // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.nav-links') && !e.target.closest('.mobile-menu-btn')) {
-                navLinks.classList.remove('active');
+                if (navLinks) {
+                    navLinks.style.display = 'none';
+                }
             }
         });
     </script>
