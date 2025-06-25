@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ovrly – macOS Overlay LLM Screenshot Analyzer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; background-color: #f9f9f9; color: #222; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        header { background-color: #fff; border-bottom: 1px solid #eee; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav.container { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #111; }
+        .nav-links { list-style: none; display: flex; gap: 1rem; }
+        .nav-links li a { padding: 0.5rem; color: #555; }
+        .hero { background: linear-gradient(135deg, #f5f7fa, #e4ecf7); padding: 4rem 1rem; }
+        .container { max-width: 960px; margin: 0 auto; }
+        .hero-content { text-align: center; }
+        .hero-tagline { font-size: 1rem; color: #666; margin-bottom: 1rem; }
+        .hero-title { font-size: 3rem; font-weight: bold; margin-bottom: 1rem; line-height: 1.2; }
+        .hero-subtitle { font-size: 1.1rem; color: #444; margin-bottom: 2rem; }
+        .btn-primary { background-color: #007aff; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 1rem; }
+        .secondary-download { display: block; margin-top: 0.5rem; color: #007aff; font-size: 0.9rem; }
+        .price-info { margin-top: 0.25rem; font-size: 0.85rem; color: #555; }
+        .features { padding: 4rem 1rem; background-color: #fff; }
+        .features-content { max-width: 720px; margin: 0 auto; text-align: center; }
+        .section-title { font-size: 2rem; margin-bottom: 1rem; }
+        .features-description { color: #555; margin-bottom: 2rem; }
+        .platform-badges { margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+        .platform-badge { background-color: #eee; padding: 0.4rem 0.8rem; border-radius: 999px; font-size: 0.85rem; }
+        .footer-content { text-align: center; font-size: 0.8rem; color: #888; padding: 2rem 1rem; }
+        .app-preview { margin-top: 2rem; display: flex; justify-content: center; }
+        .floating-window { width: 360px; background-color: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; }
+        .window-header { background-color: #f5f5f5; padding: 0.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ddd; }
+        .window-dots { display: flex; gap: 0.4rem; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background-color: #ff5f56; }
+        .dot-yellow { background-color: #ffbd2e; }
+        .dot-green { background-color: #27c93f; }
+        .window-title { font-size: 0.9rem; color: #333; }
+        .chat-window { padding: 1rem; background: #fcfcfc; }
+        .chat-response { background-color: #f0f3f7; padding: 1rem; border-radius: 6px; font-size: 0.9rem; }
+        .response-header { font-weight: bold; margin-bottom: 0.5rem; }
+        .chat-input { margin-top: 1rem; width: 100%; padding: 0.6rem; font-size: 0.9rem; border: 1px solid #ccc; border-radius: 6px; }
+        @media (max-width: 600px) {
+            .hero-title { font-size: 2.2rem; }
+            .nav-links { display: none; }
+            .mobile-download-btn { display: inline-block; margin-top: 1rem; background: #007aff; color: #fff; padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">ovrly</div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#why-ovrly">Why ovrly?</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-tagline">
+                        Developer‑centric, AI‑powered overlay for macOS
+                    </div>
+                    <h1 class="hero-title">
+                        Your screen. <br>
+                        Instantly understood.
+                    </h1>
+                    <p class="hero-subtitle">
+                        ovrly is a lightweight SwiftUI overlay that captures your screen in real‑time, sends it to OpenAI, Anthropic, and Gemini, and returns Markdown‑rendered AI insights — all via keyboard‑driven controls.
+                    </p>
+
+                    <a href="#download" class="mobile-download-btn">
+                        Download ovrly
+                    </a>
+                    <div class="download-section">
+                        <a href="#download" class="btn-primary">
+                            Download ovrly (macOS)
+                        </a>
+                        <a href="#download" class="secondary-download">
+                            or build from source
+                        </a>
+                        <div class="price-info">
+                            Free / DIY — perfect for tinkering
+                        </div>
+                    </div>
+
+                    <div class="app-preview">
+                        <div class="floating-window floating">
+                            <div class="window-header">
+                                <div class="window-dots">
+                                    <div class="dot dot-red"></div>
+                                    <div class="dot dot-yellow"></div>
+                                    <div class="dot dot-green"></div>
+                                </div>
+                                <div class="window-title">AI Analysis</div>
+                            </div>
+                            <div class="chat-window">
+                                <div class="chat-response">
+                                    <div class="response-header">
+                                        🤖 ovrly Response
+                                    </div>
+                                    <div class="response-text">
+                                        This screenshot shows a SwiftUI View using Combine. You can extract text via ScreenCaptureKit and parse it into LLM calls.
+                                    </div>
+                                </div>
+                                <input type="text" class="chat-input" placeholder="Press ⌘ + Return to analyze" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="features-content">
+                    <h2 class="section-title">
+                        Core Features
+                    </h2>
+                    <p class="features-description">
+                        ovrly is engineered for developers who want instant AI interpretation of on‑screen content. Here's what it offers:
+                    </p>
+                    <ul style="margin:20px 0; padding-left:20px; text-align: left;">
+                        <li>Headless, always‑on‑top overlay window</li>
+                        <li>Keyboard shortcuts (⌘+Return, ⌘+R, ⌘+., ⌘+Shift+P, ⌘+Shift+Q)</li>
+                        <li>Supports OpenAI GPT‑4o, Anthropic Claude 3, and Google Gemini 2.5</li>
+                        <li>Real‑time screenshot → base64 → multi‑API analysis</li>
+                        <li>Streaming & non‑streaming API support</li>
+                        <li>Markdown + LaTeX formatted response rendering</li>
+                        <li>Automatic confidence scoring and retry logic</li>
+                        <li>UserDefaults‑based persistence (API keys, preferences, window state)</li>
+                    </ul>
+                    <div class="platform-badges">
+                        <span class="platform-badge">🍎 macOS 14+ (ScreenCaptureKit)</span>
+                        <span class="platform-badge">🔧 SwiftUI • Swift 5.9 • Combine</span>
+                        <span class="platform-badge">⌨️ Developer & private‑use focus</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 ovrly. For private use and customization. No telemetry.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
