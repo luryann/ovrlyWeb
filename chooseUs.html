@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why ovrly Beats Cluely</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #2c3e50;
+      margin: 0;
+      padding: 60px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    th, td {
+      padding: 20px;
+      text-align: left;
+    }
+    th {
+      background: #2c3e50;
+      color: white;
+      font-size: 1.1rem;
+    }
+    tr:nth-child(even) { background: #f2f2f2; }
+    .check { color: #27ae60; font-weight: bold; }
+    .cross { color: #e74c3c; font-weight: bold; }
+    .footer { text-align: center; margin-top: 40px; color: #7f8c8d; }
+    .mobile-comparison { display: none; }
+    @media (max-width: 768px) {
+      body { padding: 20px 15px; }
+      h1 { font-size: 2rem; margin-bottom: 30px; }
+      table { display: none; }
+      .mobile-comparison { display: block; }
+      .feature-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      }
+      .feature-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+      .comparison-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      .comparison-row:last-child { border-bottom: none; }
+      .platform { font-weight: 500; width: 45%; }
+      .status { width: 45%; text-align: right; }
+      .why-matters {
+        margin-top: 15px;
+        font-size: 0.9rem;
+        color: #7f8c8d;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+      }
+      .footer { margin-top: 30px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ovrly vs. Cluely</h1>
+
+    <!-- Desktop Comparison Table -->
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>ovrly</th>
+        <th>Cluely</th>
+        <th>Why it Matters</th>
+      </tr>
+      <tr>
+        <td>Real‑time Screen Capture</td>
+        <td class="check">✔️</td>
+        <td class="cross">❌</td>
+        <td>Instantly grabs your screen on ⌘+Return or click—no delays.</td>
+      </tr>
+      <tr>
+        <td>Multi‑LLM Support</td>
+        <td class="check">OpenAI, Claude, Gemini</td>
+        <td class="cross">❌</td>
+        <td>Choose best AI per task—versatility counts.</td>
+      </tr>
+      <tr>
+        <td>Overlay, Borderless & Stealthy</td>
+        <td class="check">✔️</td>
+        <td class="cross">❌</td>
+        <td>Runs invisibly—perfect for proctored tests and coding.</td>
+      </tr>
+      <tr>
+        <td>Keyboard‑Driven UX</td>
+        <td class="check">⌘+Return, ⌘+R, ⌘+., ⌘+Shift+P, ⌘+Shift+Q</td>
+        <td class="cross">❌</td>
+        <td>Effortless keyboard control—no mouse needed.</td>
+      </tr>
+      <tr>
+        <td>Markdown + LaTeX Rendering</td>
+        <td class="check">✔️</td>
+        <td class="cross">❌</td>
+        <td>Clear, formatted output—includes math and code.</td>
+      </tr>
+      <tr>
+        <td>Confidence & Retry Logic</td>
+        <td class="check">✔️</td>
+        <td class="cross">❌</td>
+        <td>Reliable results with auto-retries and scoring.</td>
+      </tr>
+      <tr>
+        <td>Persistent Preferences</td>
+        <td class="check">UserDefaults (keys, opacity, window state)</td>
+        <td class="cross">❌</td>
+        <td>Saves your setup—no reconfiguration each use.</td>
+      </tr>
+      <tr>
+        <td>macOS 14+ Required</td>
+        <td class="check">✔️</td>
+        <td class="cross">❌</td>
+        <td>Uses ScreenCaptureKit—modern and optimized.</td>
+      </tr>
+      <tr>
+        <td>Privacy</td>
+        <td class="check">✔️</td>
+        <td class="cross">❌</td>
+        <td>No telemetry, everything processes via your backends.</td>
+      </tr>
+    </table>
+
+    <!-- Mobile View -->
+    <div class="mobile-comparison">
+      <div class="feature-card">
+        <div class="feature-title">Real‑time Screen Capture</div>
+        <div class="comparison-row">
+          <div class="platform">ovrly</div>
+          <div class="status check">✔️</div>
+        </div>
+        <div class="comparison-row">
+          <div class="platform">Cluely</div>
+          <div class="status cross">❌</div>
+        </div>
+        <div class="why-matters">Instantly grabs your screen on ⌘+Return or click—no delays.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Multi‑LLM Support</div>
+        <div class="comparison-row">
+          <div class="platform">ovrly</div>
+          <div class="status check">✔️</div>
+        </div>
+        <div class="comparison-row">
+          <div class="platform">Cluely</div>
+          <div class="status cross">❌</div>
+        </div>
+        <div class="why-matters">OpenAI, Claude, Gemini—all in one app.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Overlay, Borderless & Stealthy</div>
+        <div class="comparison-row">
+          <div class="platform">ovrly</div>
+          <div class="status check">✔️</div>
+        </div>
+        <div class="comparison-row">
+          <div class="platform">Cluely</div>
+          <div class="status cross">❌</div>
+        </div>
+        <div class="why-matters">Runs invisibly—perfect for proctored tests and coding.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Keyboard‑Driven UX</div>
+        <div class="comparison-row">
+          <div class="platform">ovrly</div>
+          <div class="status check">✔️</div>
+        </div>
+        <div class="comparison-row">
+          <div class="platform">Cluely</div>
+          <div class="status cross">❌</div>
+        </div>
+        <div class="why-matters">Effortless keyboard control—no mouse needed.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Markdown + LaTeX</div>
+        <div class="comparison-row">
+          <div class="platform">ovrly</div>
+          <div class="status check">✔️</div>
+        </div>
+        <div class="comparison-row">
+          <div class="platform">Cluely</div>
+          <div class="status cross">❌</div>
+        </div>
+        <div class="why-matters">Clear, formatted output—includes math and code.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Confidence & Retry Logic</div>
+        <div class="comparison-row">
+          <div class="platform">ovrly</div>
+          <div class="status check">✔️</div>
+        </div>
+        <div class="comparison-row">
+          <div class="platform">Cluely</div>
+          <div class="status cross">❌</div>
+        </div>
+        <div class="why-matters">Reliable results with auto‑retries and confidence scores.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Persistent Preferences</div>
+        <div class="comparison-row">
+          <div class="platform">ovrly</div>
+          <div class="status check">✔️</div>
+        </div>
+        <div class="comparison-row">
+          <div class="platform">Cluely</div>
+          <div class="status cross">❌</div>
+        </div>
+        <div class="why-matters">Saves your setup—no reconfiguration each time.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Privacy</div>
+        <div class="comparison-row">
+          <div class="platform">ovrly</div>
+          <div class="status check">✔️</div>
+        </div>
+        <div class="comparison-row">
+          <div class="platform">Cluely</div>
+          <div class="status cross">❌</div>
+        </div>
+        <div class="why-matters">No telemetry—everything processes via your backends.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Ready to upgrade? <a href="download.html">Get ovrly now →</a></p>
+    </div>
+  </div>
+</body>
+</html>
