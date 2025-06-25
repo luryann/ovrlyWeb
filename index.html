@@ -1,51 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8"/>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ovrly – macOS Overlay LLM Screenshot Analyzer</title>
+    <title>ovrly - AI-Powered Screen Analysis Tool for Students | macOS Overlay App</title>
+    <meta name="description" content="ovrly is a free AI-powered macOS overlay that instantly analyzes your screen content. Perfect for students studying code, research, and coursework. Support for GPT-4, Claude, and Gemini.">
+    <meta name="keywords" content="AI screen analyzer, macOS overlay, student tools, code analysis, GPT-4, Claude, Gemini, SwiftUI, study assistant">
+    <meta name="author" content="ovrly">
+    <meta property="og:title" content="ovrly - AI Screen Analysis for Students">
+    <meta property="og:description" content="Free AI-powered macOS tool that instantly analyzes your screen. Perfect for studying code, research, and coursework.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ovrly.app">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ovrly - AI Screen Analysis for Students">
+    <meta name="twitter:description" content="Free AI-powered macOS tool that instantly analyzes your screen content.">
+    <link rel="canonical" href="https://ovrly.app">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; background-color: #f9f9f9; color: #222; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-        header { background-color: #fff; border-bottom: 1px solid #eee; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
-        nav.container { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #111; }
-        .nav-links { list-style: none; display: flex; gap: 1rem; }
-        .nav-links li a { padding: 0.5rem; color: #555; }
-        .hero { background: linear-gradient(135deg, #f5f7fa, #e4ecf7); padding: 4rem 1rem; }
-        .container { max-width: 960px; margin: 0 auto; }
-        .hero-content { text-align: center; }
-        .hero-tagline { font-size: 1rem; color: #666; margin-bottom: 1rem; }
-        .hero-title { font-size: 3rem; font-weight: bold; margin-bottom: 1rem; line-height: 1.2; }
-        .hero-subtitle { font-size: 1.1rem; color: #444; margin-bottom: 2rem; }
-        .btn-primary { background-color: #007aff; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-size: 1rem; }
-        .secondary-download { display: block; margin-top: 0.5rem; color: #007aff; font-size: 0.9rem; }
-        .price-info { margin-top: 0.25rem; font-size: 0.85rem; color: #555; }
-        .features { padding: 4rem 1rem; background-color: #fff; }
-        .features-content { max-width: 720px; margin: 0 auto; text-align: center; }
-        .section-title { font-size: 2rem; margin-bottom: 1rem; }
-        .features-description { color: #555; margin-bottom: 2rem; }
-        .platform-badges { margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
-        .platform-badge { background-color: #eee; padding: 0.4rem 0.8rem; border-radius: 999px; font-size: 0.85rem; }
-        .footer-content { text-align: center; font-size: 0.8rem; color: #888; padding: 2rem 1rem; }
-        .app-preview { margin-top: 2rem; display: flex; justify-content: center; }
-        .floating-window { width: 360px; background-color: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; }
-        .window-header { background-color: #f5f5f5; padding: 0.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ddd; }
-        .window-dots { display: flex; gap: 0.4rem; }
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; 
+            background-color: #f9f9f9; 
+            color: #222; 
+            line-height: 1.6; 
+        }
+        
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+        }
+        
+        header { 
+            background-color: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee; 
+            padding: 1rem 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        
+        nav.container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 2rem; 
+        }
+        
+        .logo { 
+            font-size: 1.8rem; 
+            font-weight: bold; 
+            color: #007aff; 
+            background: linear-gradient(135deg, #007aff, #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links { 
+            list-style: none; 
+            display: flex; 
+            gap: 2rem; 
+        }
+        
+        .nav-links li a { 
+            padding: 0.5rem 1rem; 
+            color: #555; 
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #f0f0f0;
+            color: #007aff;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .hero { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem; 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content { 
+            text-align: center; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-tagline { 
+            font-size: 1.1rem; 
+            opacity: 0.9;
+            margin-bottom: 1rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+        
+        .hero-title { 
+            font-size: 4rem; 
+            font-weight: bold; 
+            margin-bottom: 1.5rem; 
+            line-height: 1.1; 
+        }
+        
+        .hero-subtitle { 
+            font-size: 1.3rem; 
+            opacity: 0.9;
+            margin-bottom: 3rem; 
+            line-height: 1.5;
+        }
+        
+        .download-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .btn-primary { 
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white; 
+            padding: 1rem 2rem; 
+            border-radius: 50px; 
+            font-size: 1.1rem; 
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+        
+        .secondary-download { 
+            color: rgba(255, 255, 255, 0.8); 
+            font-size: 0.95rem; 
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
+        }
+        
+        .secondary-download:hover {
+            opacity: 1;
+        }
+        
+        .price-info { 
+            font-size: 0.9rem; 
+            opacity: 0.7;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .app-preview { 
+            margin-top: 4rem; 
+            display: flex; 
+            justify-content: center; 
+        }
+        
+        .floating-window { 
+            width: 400px; 
+            background-color: rgba(255, 255, 255, 0.95); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 16px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+            overflow: hidden; 
+            backdrop-filter: blur(20px);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .window-header { 
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 1rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            border-bottom: 1px solid #dee2e6; 
+        }
+        
+        .window-dots { 
+            display: flex; 
+            gap: 0.5rem; 
+        }
+        
+        .dot { 
+            width: 14px; 
+            height: 14px; 
+            border-radius: 50%; 
+        }
+        
         .dot-red { background-color: #ff5f56; }
         .dot-yellow { background-color: #ffbd2e; }
         .dot-green { background-color: #27c93f; }
-        .window-title { font-size: 0.9rem; color: #333; }
-        .chat-window { padding: 1rem; background: #fcfcfc; }
-        .chat-response { background-color: #f0f3f7; padding: 1rem; border-radius: 6px; font-size: 0.9rem; }
-        .response-header { font-weight: bold; margin-bottom: 0.5rem; }
-        .chat-input { margin-top: 1rem; width: 100%; padding: 0.6rem; font-size: 0.9rem; border: 1px solid #ccc; border-radius: 6px; }
-        @media (max-width: 600px) {
-            .hero-title { font-size: 2.2rem; }
-            .nav-links { display: none; }
-            .mobile-download-btn { display: inline-block; margin-top: 1rem; background: #007aff; color: #fff; padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 1rem; }
+        
+        .window-title { 
+            font-size: 1rem; 
+            color: #333; 
+            font-weight: 600;
+        }
+        
+        .chat-window { 
+            padding: 1.5rem; 
+            background: #fff; 
+        }
+        
+        .chat-response { 
+            background: linear-gradient(135deg, #f8f9ff, #e6f3ff);
+            padding: 1.5rem; 
+            border-radius: 12px; 
+            font-size: 0.95rem; 
+            border-left: 4px solid #007aff;
+        }
+        
+        .response-header { 
+            font-weight: bold; 
+            margin-bottom: 0.75rem; 
+            color: #007aff;
+        }
+        
+        .chat-input { 
+            margin-top: 1.5rem; 
+            width: 100%; 
+            padding: 1rem; 
+            font-size: 0.95rem; 
+            border: 2px solid #e9ecef; 
+            border-radius: 12px; 
+            background: #f8f9fa;
+            color: #6c757d;
+        }
+        
+        .features { 
+            padding: 6rem 2rem; 
+            background-color: #fff; 
+        }
+        
+        .features-content { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            text-align: center; 
+        }
+        
+        .section-title { 
+            font-size: 2.5rem; 
+            margin-bottom: 1.5rem; 
+            color: #2c3e50;
+        }
+        
+        .features-description { 
+            color: #555; 
+            margin-bottom: 3rem; 
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .feature-description {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        .platform-badges { 
+            margin-top: 3rem; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 1rem; 
+        }
+        
+        .platform-badge { 
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.75rem 1.5rem; 
+            border-radius: 25px; 
+            font-size: 0.9rem; 
+            font-weight: 500;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        footer { 
+            background-color: #2c3e50; 
+            color: white;
+            padding: 3rem 2rem;
+        }
+        
+        .footer-content { 
+            text-align: center; 
+            font-size: 0.9rem; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .mobile-download-btn {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { 
+                font-size: 2.5rem; 
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links { 
+                display: none; 
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-download-btn { 
+                display: inline-block; 
+                background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+                color: #fff; 
+                padding: 1rem 2rem; 
+                border-radius: 50px; 
+                font-size: 1rem; 
+                font-weight: 600;
+                margin-bottom: 2rem;
+            }
+            
+            .download-section {
+                display: none;
+            }
+            
+            .floating-window {
+                width: 90%;
+                max-width: 350px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 4rem 1rem;
+            }
+            
+            .features {
+                padding: 4rem 1rem;
+            }
+            
+            .cta-section {
+                padding: 4rem 1rem;
+            }
+            
+            nav.container {
+                padding: 0 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -53,10 +459,10 @@
     <header>
         <nav class="container">
             <div class="logo">ovrly</div>
-            <button class="mobile-menu-btn">☰</button>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
-                <li><a href="#why-ovrly">Why ovrly?</a></li>
+                <li><a href="#why-students">For Students</a></li>
                 <li><a href="#download">Download</a></li>
             </ul>
         </nav>
@@ -67,51 +473,52 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-tagline">
-                        Developer‑centric, AI‑powered overlay for macOS
+                        AI-Powered Study Assistant for macOS
                     </div>
                     <h1 class="hero-title">
-                        Your screen. <br>
+                        Your screen.<br>
                         Instantly understood.
                     </h1>
                     <p class="hero-subtitle">
-                        ovrly is a lightweight SwiftUI overlay that captures your screen in real‑time, sends it to OpenAI, Anthropic, and Gemini, and returns Markdown‑rendered AI insights — all via keyboard‑driven controls.
+                        ovrly is the perfect study companion for students. Instantly analyze code, research papers, diagrams, and coursework with AI. Get explanations from GPT-4, Claude, and Gemini without leaving your screen.
                     </p>
 
                     <a href="#download" class="mobile-download-btn">
-                        Download ovrly
+                        Download Free for Students
                     </a>
+                    
                     <div class="download-section">
                         <a href="#download" class="btn-primary">
-                            Download ovrly (macOS)
+                            Download Free for Students
                         </a>
-                        <a href="#download" class="secondary-download">
-                            or build from source
+                        <a href="https://github.com/ovrly/ovrly" class="secondary-download">
+                            View on GitHub
                         </a>
                         <div class="price-info">
-                            Free / DIY — perfect for tinkering
+                            100% Free • No Ads • Open Source
                         </div>
                     </div>
 
                     <div class="app-preview">
-                        <div class="floating-window floating">
+                        <div class="floating-window">
                             <div class="window-header">
                                 <div class="window-dots">
                                     <div class="dot dot-red"></div>
                                     <div class="dot dot-yellow"></div>
                                     <div class="dot dot-green"></div>
                                 </div>
-                                <div class="window-title">AI Analysis</div>
+                                <div class="window-title">AI Study Assistant</div>
                             </div>
                             <div class="chat-window">
                                 <div class="chat-response">
                                     <div class="response-header">
-                                        🤖 ovrly Response
+                                        🎓 Study Helper
                                     </div>
                                     <div class="response-text">
-                                        This screenshot shows a SwiftUI View using Combine. You can extract text via ScreenCaptureKit and parse it into LLM calls.
+                                        This code demonstrates a binary search algorithm. The time complexity is O(log n), making it efficient for large datasets. The key insight is dividing the search space in half each iteration.
                                     </div>
                                 </div>
-                                <input type="text" class="chat-input" placeholder="Press ⌘ + Return to analyze" readonly>
+                                <input type="text" class="chat-input" placeholder="Press ⌘ + Return to analyze anything on screen" readonly>
                             </div>
                         </div>
                     </div>
@@ -123,37 +530,121 @@
             <div class="container">
                 <div class="features-content">
                     <h2 class="section-title">
-                        Core Features
+                        Perfect for Students
                     </h2>
                     <p class="features-description">
-                        ovrly is engineered for developers who want instant AI interpretation of on‑screen content. Here's what it offers:
+                        Whether you're debugging code, analyzing research papers, or understanding complex diagrams, ovrly gives you instant AI assistance right where you need it.
                     </p>
-                    <ul style="margin:20px 0; padding-left:20px; text-align: left;">
-                        <li>Headless, always‑on‑top overlay window</li>
-                        <li>Keyboard shortcuts (⌘+Return, ⌘+R, ⌘+., ⌘+Shift+P, ⌘+Shift+Q)</li>
-                        <li>Supports OpenAI GPT‑4o, Anthropic Claude 3, and Google Gemini 2.5</li>
-                        <li>Real‑time screenshot → base64 → multi‑API analysis</li>
-                        <li>Streaming & non‑streaming API support</li>
-                        <li>Markdown + LaTeX formatted response rendering</li>
-                        <li>Automatic confidence scoring and retry logic</li>
-                        <li>UserDefaults‑based persistence (API keys, preferences, window state)</li>
-                    </ul>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">💻</div>
+                            <h3 class="feature-title">Code Analysis</h3>
+                            <p class="feature-description">Stuck on a programming assignment? Get instant explanations of algorithms, debugging help, and code optimization suggestions.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">📚</div>
+                            <h3 class="feature-title">Research Assistant</h3>
+                            <p class="feature-description">Analyze research papers, extract key insights, and get summaries of complex academic content in seconds.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">🔬</div>
+                            <h3 class="feature-title">STEM Support</h3>
+                            <p class="feature-description">Get help with math equations, scientific diagrams, and technical concepts across all STEM subjects.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3 class="feature-title">Instant Access</h3>
+                            <p class="feature-description">Simple keyboard shortcuts (⌘+Return) give you AI analysis without switching apps or breaking your flow.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">🤖</div>
+                            <h3 class="feature-title">Multiple AI Models</h3>
+                            <p class="feature-description">Access GPT-4, Claude 3.5, and Gemini 2.0 - compare answers and get the best insights for your studies.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3 class="feature-title">Privacy First</h3>
+                            <p class="feature-description">Your API keys stay on your device. No data collection, no tracking, no compromises on your privacy.</p>
+                        </div>
+                    </div>
+                    
                     <div class="platform-badges">
-                        <span class="platform-badge">🍎 macOS 14+ (ScreenCaptureKit)</span>
-                        <span class="platform-badge">🔧 SwiftUI • Swift 5.9 • Combine</span>
-                        <span class="platform-badge">⌨️ Developer & private‑use focus</span>
+                        <span class="platform-badge">🍎 macOS 14+ Compatible</span>
+                        <span class="platform-badge">⚡ Real-time Analysis</span>
+                        <span class="platform-badge">🎓 Student-Focused Design</span>
+                        <span class="platform-badge">📱 Always-on-Top Overlay</span>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="why-students" class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Why Students Love ovrly</h2>
+                <p class="cta-subtitle">
+                    Join thousands of students who've transformed their study workflow with AI-powered screen analysis. 
+                    From coding bootcamps to PhD research, ovrly adapts to your learning style.
+                </p>
+                <a href="#download" class="btn-primary">Start Learning Smarter Today</a>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <footer id="download">
         <div class="container">
             <div class="footer-content">
-                <p>© 2025 ovrly. For private use and customization. No telemetry.</p>
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Ready to supercharge your studies?</h3>
+                <p style="margin-bottom: 2rem; opacity: 0.8;">Download ovrly for free and start getting AI assistance on everything you see on screen.</p>
+                
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                    <a href="https://github.com/ovrly/ovrly/releases" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); padding: 1rem 2rem; border-radius: 50px; color: white; font-weight: 600;">
+                        Download for macOS
+                    </a>
+                    <a href="https://github.com/ovrly/ovrly" style="border: 2px solid white; padding: 1rem 2rem; border-radius: 50px; color: white; font-weight: 600;">
+                        View Source Code
+                    </a>
+                </div>
+                
+                <p style="font-size: 0.9rem; opacity: 0.7;">
+                    © 2025 ovrly. Free for students and researchers. Built with ❤️ for the learning community.
+                </p>
+                <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 1rem;">
+                    Requires macOS 14+ • OpenAI, Anthropic, or Google API key required for AI features
+                </p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+    </script>
 </body>
 </html>
